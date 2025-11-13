@@ -1,0 +1,43 @@
+<div class="leaderboard-container">
+  <h3>Leaderboard</h3>
+
+  <div class="filter-buttons">
+    <button
+      *ngFor="let week of weeks"
+      type="button"
+      class="filter-btn"
+      [class.active]="activeFilter === week"
+      (click)="setFilter(week)">
+      {{ week }} ({{ getWeekCount(week) }})
+    </button>
+  </div>
+
+  <div class="leaderboard-table-container">
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Place</th>
+          <th>Customer ID</th>
+          <th>Login Name</th>
+          <th>Week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of filteredRecords">
+          <td class="place-cell" data-label="Place">{{ record.place }}</td>
+          <td data-label="Customer ID">{{ record.customerId }}</td>
+          <td class="login-name" data-label="Login Name">{{ record.loginName }}</td>
+          <td class="week-cell" data-label="Week">
+            <span class="week-badge" [attr.data-week]="record.week">
+              {{ record.week }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="filteredRecords.length === 0" class="no-records">
+    <p>No records found for the selected filter.</p>
+  </div>
+</div>

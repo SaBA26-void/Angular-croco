@@ -1,0 +1,42 @@
+.promotions-page {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+}
+
+.promotions-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .promotions-page {
+    padding: 0;
+  }
+
+  .promotions-page h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .promotions-content {
+    gap: 1.5rem;
+  }
+}
+

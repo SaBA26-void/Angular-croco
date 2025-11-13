@@ -1,0 +1,95 @@
+.nav {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 0.25rem;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.875rem 1.25rem;
+  text-decoration: none;
+  color: #189541;
+  font-weight: 500;
+  border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  background-color: #ecf0f1;
+  color: #189541;
+  border-left-color: #189541;
+  outline: none;
+}
+
+.nav-list a.active {
+  background-color: #189541;
+  color: white;
+  border-left-color: #189541;
+}
+
+// 
+// 
+// Mobile: Horizontal scrole
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-list li {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .nav-list a {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    border-left: none;
+    border-bottom-color: #189541;
+  }
+
+  .nav-list a.active {
+    border-left: none;
+    border-bottom-color: #189541;
+  }
+}
+

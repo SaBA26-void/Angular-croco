@@ -1,0 +1,196 @@
+.wheel-container {
+  width: 100%;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.wheel-container h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wheel-controls {
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.sector-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #2c3e50;
+}
+
+.sector-input:focus {
+  outline: none;
+  border-color: #3498db;
+  -webkit-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+          box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.sector-input:disabled {
+  background-color: #ecf0f1;
+  cursor: not-allowed;
+}
+
+.btn-spin {
+  width: 100%;
+  padding: 0.875rem 2rem;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-spin:hover:not(:disabled),
+.btn-spin:focus:not(:disabled) {
+  background-color: #c0392b;
+  -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+          box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+  outline: none;
+}
+
+.btn-spin:active:not(:disabled) {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.btn-spin:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #fdf2f2;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  color: #e74c3c;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.wheel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0;
+}
+
+.wheel-svg {
+  max-width: 100%;
+  height: auto;
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.sector {
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.sector-number {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.pointer {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Spin animation */
+.wheel-svg g {
+  -webkit-transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+  -o-transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+  transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+  -webkit-transform-origin: 200px 200px;
+      -ms-transform-origin: 200px 200px;
+          transform-origin: 200px 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .wheel-container {
+    padding: 1.5rem;
+  }
+
+  .wheel-container h3 {
+    font-size: 1.25rem;
+  }
+
+  .wheel-svg {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .input-group {
+    max-width: 100%;
+  }
+
+  .sector-input {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wheel-svg {
+    max-width: 300px;
+  }
+}
+

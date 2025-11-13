@@ -1,0 +1,68 @@
+<div class="posts-page">
+  <div class="posts-header">
+    <h2>Posts</h2>
+    <button
+      *ngIf="userId"
+      type="button"
+      class="btn btn-clear"
+      (click)="clearFilter()"
+    >
+      Show All Posts
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading posts...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="!loading && !error && posts.length === 0" class="no-data">
+    <p>No posts found.</p>
+  </div>
+
+  <div
+    *ngIf="!loading && !error && posts.length > 0 && !userId"
+    class="table-container"
+  >
+    <table class="posts-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Post Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of postsWithUsername">
+          <td>{{ post.username }}</td>
+          <td>{{ post.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div
+    *ngIf="!loading && !error && posts.length > 0 && userId"
+    class="cards-container"
+  >
+    <div class="posts-cards">
+      <div *ngFor="let post of posts" class="post-card">
+        <h3 class="post-card-title">{{ post.title }}</h3>
+        <p class="post-card-body">{{ getPostPreview(post.body) }}</p>
+        <button type="button" class="btn btn-details" (click)="openModal(post)">
+          Details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-modal
+    [isOpen]="modalOpen"
+    [title]="selectedPost?.title || ''"
+    [body]="selectedPost?.body || ''"
+    (closeModal)="closeModal()"
+  >
+  </app-modal>
+</div>
